@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Hospital Veterinário</title>
+    </h:head>
+    <h:body>
+        <h:panelGrid style="width: 100%; text-align: center;">
+            Novo Tutor
+        </h:panelGrid>
+
+        <h:form >
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome: " />
+                <p:inputText value="#{novoTutorControle.tutor.nome}" />
+                <h:outputLabel value="CPF: " />
+                <p:inputText value="#{novoTutorControle.tutor.cpf}"  />
+                <h:outputLabel value="Endereço: " />
+                <p:inputText value="#{novoTutorControle.tutor.endereco}"/>
+                <h:outputLabel value="Telefone: " />
+                <p:inputText value="#{novoTutorControle.tutor.telefone}"/>
+                
+            </h:panelGrid>
+            <h:panelGrid columns="2">
+                <p:commandButton value="Cancelar" immediate="true"
+                                 action="menu"
+                                 />
+                <p:commandButton value="Gravar" 
+                                 action="#{novoTutorControle.inserir()}"
+                                 update="@form" />
+            </h:panelGrid>
+            <p:messages showIcon="false" closable="true" />
+ 
+        </h:form>
+
+
+
+    </h:body>
+</html>
